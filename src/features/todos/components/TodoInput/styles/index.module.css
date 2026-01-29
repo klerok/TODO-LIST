@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: center;
+  background: #000;
+  gap: 8px;
+}
+
+.input_place {
+  margin: 0;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 16px;
+  width: 523px;
+  background: #262626;
+}
+
+.add_button {
+  margin: 0;
+  width: 90px;
+  height: 52px;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  background: #1e6f9f;
+}
