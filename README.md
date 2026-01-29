@@ -19,7 +19,7 @@ npm run dev
 ```
 
 Структура репозитория (актуальна для этого каталога)
-
+```
 ├── package.json            # метаданные проекта, зависимости и скрипты
 ├── vite.config.ts          # конфигурация Vite (dev server / build)
 ├── tsconfig.json           # TypeScript настройки проекта
@@ -89,3 +89,4 @@ npm run dev
 │   └── index.d.ts
 └── services/               # внешние сервисы / API-обёртки
     └── api.ts              # функции для вызова внешних API
+```
