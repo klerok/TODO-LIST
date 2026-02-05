@@ -1,12 +1,10 @@
 import "./App.css";
-import { Header } from "./components/layout/Header/Header.tsx";
-import { TodoInput } from "./features/todos/components/TodoInput/TodoInput.tsx";
+import { TodoManager } from "./features/todos/components/TodoManager/TodoManager.tsx";
 
 function App() {
   return (
     <>
-      <Header />
-      <TodoInput/>
+      <TodoManager/>
     </>
   );
 }

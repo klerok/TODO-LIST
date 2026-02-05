@@ -1,0 +1,100 @@
+.list_item {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #262626;
+  border-radius: 8px;
+}
+
+/* Checkbox wrapper */
+.checkbox_wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  min-width: 20px;
+  min-height: 20px;
+  flex-shrink: 0;
+}
+
+/* Скрываем стандартный checkbox */
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+/* Кастомный круглый checkbox - DEFAULT (unchecked) */
+.checkmark {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #4EA8DE;
+  background: transparent;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+/* Checked state - DONE (фиолетовый фон с галочкой) */
+.checkbox:checked ~ .checkmark {
+  background: #5E60CE;
+  border-color: #5E60CE;
+}
+
+/* Белая галочка внутри checked checkbox */
+.checkbox:checked ~ .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%) rotate(45deg);
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  border-radius: 1px;
+}
+
+/* Текст задачи - DEFAULT (невыполненная) */
+.task_text {
+  flex: 1;
+  color: #F2F2F2;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* Текст задачи - DONE (выполненная) */
+.task_text_completed {
+  flex: 1;
+  color: #808080;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: line-through;
+  word-wrap: break-word;
+}
+
+/* Кнопка удаления */
+.delete_button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  min-height: 24px;
+  flex-shrink: 0;
+}
+
+.delete_icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
