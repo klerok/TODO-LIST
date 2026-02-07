@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.listSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+  background: #1a1a1a;
+  border-top: none;
+  padding-top: 12px;
+  margin-top: -12px;
+}
+
+.inputWrapper {
+  position: relative;
+  z-index: 1;
+  margin-top: -28px;
+  margin-bottom: -12px;
+}

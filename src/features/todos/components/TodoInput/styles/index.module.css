@@ -1,27 +1,39 @@
 .container {
   display: flex;
   justify-content: center;
+  align-items: stretch;
   background: #000;
-  gap: 8px;
+  gap: 0;
 }
 
 .input_place {
   margin: 0;
-  border: 1px solid gray;
-  border-radius: 8px;
+  border: 1px solid #333;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
   padding: 16px;
   width: 523px;
+  min-height: 52px;
+  box-sizing: border-box;
   background: #262626;
 }
 
 .add_button {
   margin: 0;
-  width: 90px;
-  height: 52px;
-  border: none;
-  border-radius: 8px;
-  padding: 16px;
+  padding: 16px 24px;
+  min-height: 52px;
+  border: 1px solid #333;
+  border-radius: 0 8px 8px 0;
   display: flex;
   align-items: center;
-  background: #1e6f9f;
+  justify-content: center;
+  white-space: nowrap;
+  background: #1E6F9F;
+  color: #fff;
+  cursor: pointer;
+}
+
+.add_button:hover {
+  background: #4ea8de;
+  
 }
