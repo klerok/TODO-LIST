@@ -23,3 +23,22 @@
   margin-top: -28px;
   margin-bottom: -12px;
 }
+
+.task_tracker {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 55px;
+}
+
+.task_tracker_create_text {
+  font-weight: 700;
+  font-size: 14px;
+  color: #4ea8de;
+}
+
+.task_tracker_complete_text {
+  font-weight: 700;
+  font-size: 14px;
+  color: #8284FA;
+}

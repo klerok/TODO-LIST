@@ -42,6 +42,15 @@ export function TodoManager() {
         <TodoInput onAdd={addTask} />
       </div>
       <div className={styles.listSection}>
+        <div className={styles.task_tracker}>
+          <span className={styles.task_tracker_create_text}>
+            Созданные задачи: {tasks.length}
+          </span>
+          <span className={styles.task_tracker_complete_text}>
+            Завершенные задачи: {tasks.filter((task) => task.status).length}/
+            {tasks.length}
+          </span>
+        </div>
         <TodoList
           sortedTasks={sortedTasks}
           onRemove={removeTask}
