@@ -1,5 +1,5 @@
 import "./App.css";
-import { TodoManager } from "./features/todos/components/TodoManager/TodoManager.tsx";
+import { TodoManager } from "./features/todos";
 
 function App() {
   return (

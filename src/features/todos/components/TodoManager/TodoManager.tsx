@@ -36,7 +36,7 @@ export function TodoManager() {
     setTasks([
       ...tasks,
       {
-        id: tasks.length,
+        id: Date.now() + Math.random(),
         task: taskText,
         status: false,
       },
