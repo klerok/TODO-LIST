@@ -2,15 +2,27 @@ import { useState } from "react";
 import { Header } from "../../../../components/layout/Header/Header";
 import { TodoInput } from "../TodoInput/TodoInput";
 import { TodoList } from "../TodoList/TodoList";
-import type { Task } from "../../../../types";
+import { type Filter, type Task } from "../../../../types/index.d";
 import styles from "./styles/index.module.css";
+import { FilterBar } from "../FilterBar/FilterBar";
 
 export function TodoManager() {
   const [tasks, setTasks] = useState<Task[]>([]);
+  const [filter, setFilter] = useState<Filter>("all");
 
   const sortedTasks = [...tasks].sort(
     (a: Task, b: Task) => Number(a.status) - Number(b.status)
   );
+
+  const filteredTasks = sortedTasks.filter((task: Task) => {
+    if (filter === "active") return !task.status;
+    if (filter === "completed") return task.status;
+    return true;
+  });
+
+  const filterChange = (newFilter: Filter) => {
+    setFilter(newFilter);
+  };
 
   const toggleTask = (taskId: number) => {
     setTasks(
@@ -43,6 +55,7 @@ export function TodoManager() {
       </div>
       <div className={styles.listSection}>
         <div className={styles.task_tracker}>
+          <FilterBar currentFilter={filter} onFilterChange={filterChange} />
           <span className={styles.task_tracker_create_text}>
             Созданные задачи: {tasks.length}
           </span>
@@ -52,7 +65,7 @@ export function TodoManager() {
           </span>
         </div>
         <TodoList
-          sortedTasks={sortedTasks}
+          sortedTasks={filteredTasks}
           onRemove={removeTask}
           onToggle={toggleTask}
         />
