@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Header } from "../../../../components/layout/Header/Header";
 import { TodoInput } from "../TodoInput/TodoInput";
 import { TodoList } from "../TodoList/TodoList";
 import { type Filter, type Task } from "../../../../types/index.d";
 import styles from "./styles/index.module.css";
 import { FilterBar } from "../FilterBar/FilterBar";
+import { loadTasks, saveTasks } from "../../model/todos.service";
 
 export function TodoManager() {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>(() => loadTasks());
   const [filter, setFilter] = useState<Filter>("all");
+
+  useEffect(() => {
+    saveTasks(tasks)
+  }, [tasks])
 
   const sortedTasks = [...tasks].sort(
     (a: Task, b: Task) => Number(a.status) - Number(b.status)
